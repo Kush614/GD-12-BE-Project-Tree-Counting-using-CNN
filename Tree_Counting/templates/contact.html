@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static',filename = 'fonts1/icomoon/style.css')}}">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css1/bootstrap.min.css')}}">
+    
+    <!-- Style -->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css1/style.css')}}">
+
+    <title>Contact Here</title>
+  </head>
+  <body>
+  
+
+  <div class="content">
+    
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+                
+              <h3 class="heading mb-4">Let's talk about everything!</h3>
+             
+
+              <p><img src="{{url_for('static',filename = 'images1/undraw-contact.svg')}}" alt="Image" class="img-fluid"></p>
+
+
+            </div>
+            <div class="col-md-6">
+              
+              <form class="mb-5" method="post" action="\contact">
+              	 {% with messages = get_flashed_messages() %}  
+        						 {% if messages %}  
+            					   {% for message in messages %}  
+             					  <div class="alert alert-danger" role="alert">
+               						 <center>{{message}}</center>
+             					  </div>
+             					  {% endfor %}  
+        						 {% endif %}  
+      							{% endwith %}
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email"
+                    required="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 form-group">
+                    <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Write your message" required=""></textarea>
+                  </div>
+                </div>  
+                <div class="row">
+                  <div class="col-12">
+                    <input type="submit" onclick="myFunction()" value="submit" class="btn btn-primary rounded-0 py-2 px-4">
+                
+                  </div>
+                </div>
+                <script>
+                 	 function myFunction() {
+                    alert("Your message is sucessfully submitted");
+                  }
+                </script>
+              </form>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    
+    
+
+    <script src="{{url_for('static',filename = 'js1/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js1/popper.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js1/bootstrap.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js1/jquery.validate.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js1/main.js')}}"></script>
+
+  </body>
+</html>
